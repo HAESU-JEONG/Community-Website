@@ -46,11 +46,11 @@ session_start();
         }
     </script>
     <li class="nav-item">
-        <a class="nav-link active" href="./sign_up/sign_up_input.php">글 쓰기</a>
+        <a class="nav-link active" href="./write_text/write_text.php">글 쓰기</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="./login/login.php">글 보기</a>
+        <a class="nav-link" href="./show_text_list/show_text_list.php">글 보기</a>
     </li>
 </body>
 </html>

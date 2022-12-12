@@ -1,11 +1,5 @@
 <?PHP
-$host = "localhost";
-$user = "haesu0903";
-$password = "okbaro400!";
-$dbname = "haesu0903";
-
-$link = new mysqli($host, $user, $password);
-$link->query("use $dbname");
+require('./../db/db_connect.php');
 
 $hashPassword = password_hash($_POST['sign_up_pw'], PASSWORD_DEFAULT);
 echo $hashPassword;

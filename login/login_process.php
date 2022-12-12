@@ -1,10 +1,5 @@
 <?PHP
-$host = "localhost";
-$user = "haesu0903";
-$password = "okbaro400!";
-$dbname = "haesu0903";
-$link = new mysqli($host, $user, $password);
-$link->query("use $dbname");
+require('./../db/db_connect.php');
 
 $input_id = $_POST['id'];
 $input_pw = $_POST['pw'];

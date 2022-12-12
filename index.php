@@ -45,12 +45,12 @@ session_start();
 
         }
     </script>
-    <!-- <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="./sign_up/sign_up_input.php">회원가입 </a>
+    <li class="nav-item">
+        <a class="nav-link active" href="./sign_up/sign_up_input.php">글 쓰기</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="./login/login.php">로그인</a>
-    </li> -->
+        <a class="nav-link" href="./login/login.php">글 보기</a>
+    </li>
 </body>
 </html>

@@ -2,10 +2,10 @@
 require('./../db/db_connect.php');
 
 $create_tbl = "create table posting_tbl(
-    number int(10) primary key,
+    number int(10) not null auto_increment,
     id char(20) not null,
     title varchar(100) not null,
-    contents varchar(4000) not null,
+    contents mediumtext not null,
     post_date date not null,
     view_cnt int(10) unsigned not null,
     foreign key(id) reference account_tbl(id) on update cascade on delete cascade

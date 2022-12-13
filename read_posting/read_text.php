@@ -12,7 +12,6 @@ require('./../db/db_connect.php');
 		$posting_num = $_GET["number"]; /* bno함수에 idx값을 받아와 넣음*/
 		$view_result = $link->query("select * from posting_tbl where number ='{$posting_num}'");
 		$view = $view_result->fetch_assoc();
-		// $view = mysqli_fetch_array($link->query("select * from posting_tbl where number ='{$posting_num}'"));
 		$view_cnt = $view["view_cnt"] + 1;
 		$fet = $link->query("update posting_tbl set view_cnt = '{$view_cnt}' where number = '{$posting_num}'");
 		$sql = $link->query("select * from posting_tbl where number='{$posting_num}'"); /* 받아온 idx값을 선택 */
@@ -32,8 +31,8 @@ require('./../db/db_connect.php');
 	<div id="bo_ser">
 		<ul>
 			<li><a href="/">[목록으로]</a></li>
-			<li><a href="modify.php?idx=<?php echo $posting["view_cnt"]; ?>">[수정]</a></li>
-			<li><a href="delete.php?idx=<?php echo $posting["view_cnt"]; ?>">[삭제]</a></li>
+			<li><a href="./../modify_posting/modify_text.php?number=<?echo $posting["number"]; ?>">[수정]</a></li>
+			<li><a href="./../delete_posting/delete_text.php?number=<?php echo $posting["number"]; ?>">[삭제]</a></li>
 		</ul>
 	</div>
 </div>

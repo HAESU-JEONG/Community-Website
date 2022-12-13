@@ -24,23 +24,23 @@ require('./../db/db_connect.php');
         <?php
         // posting_tbl 테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
           $sql = $link->query("select number, id, title, post_date, view_cnt from posting_tbl order by number desc limit 0,10"); 
-            while($board = $sql->fetch_array())
+            while($posting = $sql->fetch_array())
             {
               //title변수에 DB에서 가져온 title을 선택
-              $title=$board["title"]; 
+              $title=$posting["title"]; 
               if(strlen($title)>30)
               { 
                 //title이 30을 넘어서면 ...표시
-                $title=str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
+                $title=str_replace($posting["title"],mb_substr($posting["title"],0,30,"utf-8")."...",$posting["title"]);
               }
         ?>
       <tbody>
         <tr>
-          <td width="70"><?php echo $board['number']; ?></td>
-          <td width="500"><a href=""><?php echo $title;?></a></td>
-          <td width="120"><?php echo $board['id']?></td>
-          <td width="100"><?php echo $board['post_date']?></td>
-          <td width="100"><?php echo $board['view_cnt']; ?></td>
+          <td width="70"><?php echo $posting["number"]; ?></td>
+          <td width="500"><a href="./../read_posting/read_text.php?number=<?php echo $posting["number"];?>"><?php echo $title;?></a></td>
+          <td width="120"><?php echo $posting["id"]?></td>
+          <td width="100"><?php echo $posting["post_date"]?></td>
+          <td width="100"><?php echo $posting["view_cnt"]; ?></td>
         </tr>
       </tbody>
       <?php } ?>

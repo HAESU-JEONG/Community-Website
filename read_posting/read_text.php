@@ -1,5 +1,16 @@
 <?PHP
 require('./../db/db_connect.php');
+session_start();
+    $URL = "./../index.php";
+    if(!isset($_SESSION['userId'])) {
+?>
+
+    <script>
+            alert("로그인이 필요합니다");
+            location.replace("<?php echo $URL?>");
+    </script>
+<?php
+        }
 ?>
 <!doctype html>
 <head>
@@ -36,5 +47,34 @@ require('./../db/db_connect.php');
 		</ul>
 	</div>
 </div>
+<!--- 댓글 불러오기 -->
+<div class="reply_view">
+	<h3>댓글목록</h3>
+		<?php
+			$comment_sql = $link->query("select * from comment_tbl where number='{$posting_num}' order by idx desc");
+			while($reply = $comment_sql->fetch_assoc()){ 
+		?>
+		<div class="dap_lo">
+			<div><b><?php echo $reply["id"];?></b></div>
+			<div class="dap_to comt_edit"><?php echo nl2br("$reply[comment]"); ?></div>
+			<div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
+			<div class="rep_me rep_menu">
+				<a class="dat_edit_bt" href="#">수정</a>
+				<a class="dat_delete_bt" href="#">삭제</a>
+			</div>
+		</div>
+	<?php } ?>
+
+	<!--- 댓글 입력 폼 -->
+	<div class="dap_ins">
+		<form action="./../comment_write/comment_confirm.php?number=<?php echo $posting_num; ?>" method="post">
+			<input type="hidden" name="comment_id" id="comment_id" value="<?=$_SESSION['userId']?>"><?=$_SESSION['userId']?>
+			<div style="margin-top:10px; ">
+				<textarea name="content" class="reply_content" id="re_content" ></textarea>
+				<button id="rep_bt" class="re_bt">댓글 작성하기</button>
+			</div>
+		</form>
+	</div>
+</div><!--- 댓글 불러오기 끝 -->
 </body>
 </html>

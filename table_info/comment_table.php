@@ -6,6 +6,7 @@ $create_tbl = "create table comment_tbl(
     number int(10) not null,
     id char(20) not null,
     comment varchar(1000) not null,
+    date datetime not null,
     foreign key(number) reference posting_tbl(number) on update cascade on delete cascade,
     foreign key(id) reference account_tbl(id) on update cascade on delete cascade
 );";

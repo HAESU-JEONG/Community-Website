@@ -33,11 +33,20 @@ require('./../db/db_connect.php');
                 //title이 30을 넘어서면 ...표시
                 $title=str_replace($posting["title"],mb_substr($posting["title"],0,30,"utf-8")."...",$posting["title"]);
               }
+              //댓글 수 카운트
+              $posting_num = $posting["number"];
+              $sql2 = $link->query("select * from comment_tbl where number='$posting_num'"); //reply테이블에서 con_num이 board의 idx와 같은 것을 선택
+              $rep_count = mysqli_num_rows($sql2); //num_rows로 정수형태로 출력
         ?>
       <tbody>
         <tr>
           <td width="70"><?php echo $posting["number"]; ?></td>
-          <td width="500"><a href="./../read_posting/read_text.php?number=<?php echo $posting["number"];?>"><?php echo $title;?></a></td>
+          <td width="500">
+            <a href="./../read_posting/read_text.php?number=<?php echo $posting["number"];?>">
+              <?php echo $title;?>
+              <span class="re_ct">[<?php echo $rep_count; ?>]</span>
+            </a>
+          </td>
           <td width="120"><?php echo $posting["id"]?></td>
           <td width="100"><?php echo $posting["post_date"]?></td>
           <td width="100"><?php echo $posting["view_cnt"]; ?></td>

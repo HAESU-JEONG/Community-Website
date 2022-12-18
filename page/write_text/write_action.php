@@ -6,7 +6,7 @@
     $content = $_POST["content"];              //Content
     $date = date('Y-m-d H:i:s');            //Date
 
-    $URL = './../index.php';                   //return URL
+    $URL = './../../index.php';                   //return URL
 
 
     $query = "insert into posting_tbl (number, id, title, contents, post_date, view_cnt) 

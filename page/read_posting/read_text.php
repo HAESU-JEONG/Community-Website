@@ -75,6 +75,23 @@ session_start();
 			</div>
 		</form>
 	</div>
+	<!-- 댓글 수정 -->
+	<div class="dat_edit">
+		<form method="post" action="./../modify_comment/modify_comment_confirm.php">
+			<input type="hidden" name="comment_number" value="<?php echo $reply['idx']; ?>" />
+			<input type="hidden" name="posting_num" value="<?php echo $posting_num; ?>">
+			<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
+			<input type="submit" value="수정하기" class="re_mo_bt">
+		</form>
+	</div>
+	<!-- 댓글 삭제 확인 -->
+	<div class='dat_delete'>
+		<form action="./../delete_comment/comment_delete.php" method="post">
+			<input type="hidden" name="comment_number" value="<?php echo $reply['idx']; ?>" />
+			<input type="hidden" name="posting_num" value="<?php echo $posting_num; ?>">
+			<input type="submit" value="확인"></p>
+		</form>
+	</div>
 </div><!--- 댓글 불러오기 끝 -->
 </body>
 </html>

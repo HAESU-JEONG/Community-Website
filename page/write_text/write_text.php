@@ -1,7 +1,7 @@
 <?php
 require('./../db/db_connect.php');
     session_start();
-    $URL = "./../index.php";
+    $URL = "./../../index.php";
     if(!isset($_SESSION['userId'])) {
 ?>
 

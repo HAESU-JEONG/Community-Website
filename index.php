@@ -16,7 +16,7 @@ session_start();
             echo "{$_SESSION['userId']}님 환영합니다  ";
     ?>
             <li class="nav-item">
-                <a class="nav-link" href="./page/account/update_sign_up_info.php">회원 정보 수정</a>
+                <!-- <a class="nav-link" href="./page/account/update_sign_up_info.php">회원 정보 수정</a> -->
             </li>
             <li class="nav-item d-flex align-items-center" onclick="logout()">
                 <a href='./page/login/logout_process.php'>로그아웃</a>
@@ -50,7 +50,7 @@ session_start();
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="./page/show_text_list/show_text_list.php">글 보기</a>
+        <a class="nav-link" href="./page/show_text_list/show_text_list.php">전체 글 보기</a>
     </li>
 </body>
 </html>

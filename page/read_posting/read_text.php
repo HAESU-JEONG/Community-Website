@@ -59,8 +59,8 @@ session_start();
 			<div class="dap_to comt_edit"><?php echo nl2br("$reply[comment]"); ?></div>
 			<div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
 			<div class="rep_me rep_menu">
-				<a class="dat_edit_bt" href="#">수정</a>
-				<a class="dat_delete_bt" href="#">삭제</a>
+				<!-- <a class="dat_edit_bt" href="#">수정</a> -->
+				<a class="dat_delete_bt" href="./../delete_comment/comment_delete.php?idx=<?echo $reply['idx']; ?>">삭제</a>
 			</div>
 		</div>
 	<?php } ?>
@@ -73,23 +73,6 @@ session_start();
 				<textarea name="content" class="reply_content" id="re_content" ></textarea>
 				<button id="rep_bt" class="re_bt">댓글 작성하기</button>
 			</div>
-		</form>
-	</div>
-	<!-- 댓글 수정 -->
-	<div class="dat_edit">
-		<form method="post" action="./../modify_comment/modify_comment_confirm.php">
-			<input type="hidden" name="comment_number" value="<?php echo $reply['idx']; ?>" />
-			<input type="hidden" name="posting_num" value="<?php echo $posting_num; ?>">
-			<textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
-			<input type="submit" value="수정하기" class="re_mo_bt">
-		</form>
-	</div>
-	<!-- 댓글 삭제 확인 -->
-	<div class='dat_delete'>
-		<form action="./../delete_comment/comment_delete.php" method="post">
-			<input type="hidden" name="comment_number" value="<?php echo $reply['idx']; ?>" />
-			<input type="hidden" name="posting_num" value="<?php echo $posting_num; ?>">
-			<input type="submit" value="확인"></p>
 		</form>
 	</div>
 </div><!--- 댓글 불러오기 끝 -->

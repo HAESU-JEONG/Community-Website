@@ -16,7 +16,7 @@ session_start();
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
-<!-- <link rel="stylesheet" type="text/css" href="/css/style.css" /> -->
+<link rel="stylesheet" type="text/css" href="./../../css/style.css" />
 </head>
 <body>
 	<?php
@@ -41,7 +41,7 @@ session_start();
 	<!-- 목록, 수정, 삭제 -->
 	<div id="bo_ser">
 		<ul>
-			<li><a href="/">[목록으로]</a></li>
+			<li><a href="./../show_text_list/show_text_list.php">[목록으로]</a></li>
 			<li><a href="./../modify_posting/modify_text.php?number=<?echo $posting["number"]; ?>">[수정]</a></li>
 			<li><a href="./../delete_posting/delete_text.php?number=<?php echo $posting["number"]; ?>">[삭제]</a></li>
 		</ul>

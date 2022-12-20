@@ -6,11 +6,12 @@ require('./../db/db_connect.php');
 <head>
 <meta charset="UTF-8">
 <title>커뮤니티</title>
+<link rel="stylesheet" type="text/css" href="./../../css/style.css" />
 </head>
 <body>
 <div id="board_area"> 
   <h1>자유게시판</h1>
-  <h4>자유롭게 글을 쓸 수 있는 게시판입니다.</h4>
+  <h4>자유롭게 글을 작성할 수 있습니다</h4>
     <table class="list-table">
       <thead>
           <tr>

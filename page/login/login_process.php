@@ -12,9 +12,9 @@ $row = mysqli_fetch_array($result);
 $hashedPassword = $row['pw'];
 $row['id'];
 
-foreach($row as $key => $r){
-    echo "{$key} : {$r} <br>";
-}
+// foreach($row as $key => $r){
+//     echo "{$key} : {$r} <br>";
+// }
 // echo $row['id'];
 // DB 정보를 가져왔으니 
 // 비밀번호 검증 로직을 실행하면 된다.
@@ -24,8 +24,6 @@ if ($passwordResult === true) {
     // 세션에 id 저장
     session_start();
     $_SESSION['userId'] = $row['id'];
-    print_r($_SESSION);
-    echo $_SESSION['userId'];
     
 ?>
     <script>

@@ -56,7 +56,8 @@ require('./../db/db_connect.php');
       <?php } ?>
     </table>
     <div id="write_btn">
-      <a href="./../write_text/write_text.php"><button>글쓰기</button></a>
+    <a href="./../../index.php"><button id="option-btn">HOME</button></a>
+      <a href="./../write_text/write_text.php"><button id="option-btn">글쓰기</button></a>
     </div>
   </div>
 </body>

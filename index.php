@@ -9,8 +9,11 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>커뮤니티</title>
+    <link rel="stylesheet" type="text/css" href="./../../css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="menu">
     <?php
         if (isset($_SESSION['userId'])) {
             echo "{$_SESSION['userId']}님 환영합니다  ";
@@ -52,5 +55,6 @@ session_start();
     <li class="nav-item">
         <a class="nav-link" href="./page/show_text_list/show_text_list.php">전체 글 보기</a>
     </li>
+    </div>
 </body>
 </html>

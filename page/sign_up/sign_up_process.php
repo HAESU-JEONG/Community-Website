@@ -2,14 +2,14 @@
 require('./../db/db_connect.php');
 
 $hashPassword = password_hash($_POST['sign_up_pw'], PASSWORD_DEFAULT);
-echo $hashPassword;
+// echo $hashPassword;
 
 $insert_id = $_POST['sign_up_id'];
 $insert_age = $_POST['sign_up_age'];
 $insert_address = $_POST['sign_up_address'];
 
 $sql = "insert into account_tbl(id, pw, age, address) values('{$insert_id}', '{$hashPassword}', '{$insert_age}', '{$insert_address}')";
-echo $sql;
+// echo $sql;
 $result = $link->query($sql);
 
 if ($result == false) {

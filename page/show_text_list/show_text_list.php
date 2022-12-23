@@ -24,7 +24,7 @@ require('./../db/db_connect.php');
         </thead>
         <?php
         // posting_tbl 테이블에서 idx를 기준으로 내림차순해서 10개까지 표시
-          $sql = $link->query("select number, id, title, post_date, view_cnt from posting_tbl order by number desc limit 0,10"); 
+          $sql = $link->query("select number, id, title, post_date, view_cnt from posting_tbl order by number desc"); 
             while($posting = $sql->fetch_array())
             {
               //title변수에 DB에서 가져온 title을 선택
